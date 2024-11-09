@@ -45,7 +45,6 @@ modules:
     build-commands:
       - node --version
       - yarn --version
-      - $FLATPAK_BUILDER_BUILDDIR/flatpak-node/yarn2-setup.sh
       - yarn install
       - if [ $(arch) = "x86_64" ]; then  install -Dm a+rx /app/bin/ffmpeg ffmpeg/linux-x64/ffmpeg;  install
         -Dm a+rx /app/bin/ffprobe ffmpeg/linux-x64/ffprobe;  elif [ $(arch) = "aarch64"
@@ -74,8 +73,8 @@ modules:
 
     sources:
       - type: archive
-        url: https://github.com/mifi/lossless-cut/archive/v3.55.1.tar.gz
-        sha256: f1c39a0fafb217b03b2dc6e5fe608a953e9478f634c7eb8c9406038928d1f936
+        url: https://github.com/mifi/lossless-cut/archive/v3.64.0.tar.gz
+        sha256: cda94d3824075c29a390bcd7281b1d9a2e49c7ec6840d0e38182fa1820d0b1f3
 
       - type: script
         dest-filename: run.sh
