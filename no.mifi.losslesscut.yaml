@@ -5,7 +5,7 @@ sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.node18
 
-command: /app/bin/run.sh
+command: run.sh
 finish-args:
   - --socket=x11
   - --share=ipc
@@ -59,7 +59,7 @@ modules:
       - cp -ar dist/linux-*unpacked/* /app/lossless-cut/
 
       # Install the required static files
-      - install run.sh /app/bin/run.sh
+      - install run.sh $FLATPAK_DEST/bin/run.sh
       - desktop-file-edit --set-key Exec --set-value /app/bin/run.sh  no.mifi.losslesscut.desktop
       - install -Dm 0644 no.mifi.losslesscut.desktop  /app/share/applications/no.mifi.losslesscut.desktop
       - install -Dm 0644 no.mifi.losslesscut.appdata.xml  /app/share/metainfo/no.mifi.losslesscut.appdata.xml
